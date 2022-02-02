@@ -5,21 +5,30 @@ const Turn = require('../src/Turn');
 const Card = require('../src/Card');
 
 describe('Turn', function() {
+  let card;
+  let turn;
+  beforeEach(() => {
+    card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
+    turn = new Turn('guess', card);
+  });
 
-  it('Should be a function', function() {
-    const turn = new Turn();
+  it.skip('Should be a function', function() {
+    // const turn = new Turn();
     expect(Turn).to.be.a('function');
   });
-  it('Should be an instance of Turn', function() {
-    const turn = new Turn();
+  it.skip('Should be an instance of Turn', function() {
+    // const turn = new Turn();
     expect(turn).to.be.instanceof(Turn);
   });
-  it('Should take a string as its first argument', function() {
-    const card = new Card();
-    const turn = new Turn('guess', card);
+  it.skip('Should take a string as its first argument', function() {
+
     expect(turn.arguments[0]).to.be.a('string');
   });
-  it('Should take a card object as its second argument', function() {
+  it.skip('Should take a card object as its second argument', function() {
     expect(turn.arguments[1]).to.be.an('object');
   });
+  it.skip('Should should return the user\'s guess', function() {
+    expect(turn.returnGuess()).to.equal('sea otter');
+  });
+
 });
