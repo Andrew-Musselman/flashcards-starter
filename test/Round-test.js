@@ -54,4 +54,8 @@ describe('Round', function() {
     round.takeTurn('spleen');
     expect(round.calculatePercentCorrect()).to.equal(50);
   });
+  it('Should have an end', function() {
+    expect(round.endRound()).to.be.a('function');
+    expect(round.endRound()).to.equal('**Round over!** You answered 50% of the questions correctly!');
+  });
 })
