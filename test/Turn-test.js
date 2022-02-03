@@ -27,8 +27,11 @@ describe('Turn', function() {
   it.skip('Should take a card object as its second argument', function() {
     expect(turn.arguments[1]).to.be.an('object');
   });
-  it.skip('Should should return the user\'s guess', function() {
+  it.skip('Should return the user\'s guess', function() {
     expect(turn.returnGuess()).to.equal('sea otter');
+  });
+  it.skip('Should return the card', function() {
+    expect(turn.returnCard()).to.equal(card);
   });
 
 });
