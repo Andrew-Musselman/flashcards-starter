@@ -12,7 +12,7 @@ describe('Turn', function() {
     turn = new Turn('sea otter', card);
   });
 
-  it.skip('Should be a function', function() {
+  it('Should be a function', function() {
     expect(Turn).to.be.a('function');
   });
   it.skip('Should be an instance of Turn', function() {
