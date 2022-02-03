@@ -24,8 +24,24 @@ describe('Round', function() {
   });
   it('Should have a deck', function() {
     expect(round.deck).to.equal([card1, card2, card3]);
-  })
+  });
   it('Should have a current card', function() {
     expect(round.returnCurrentCard()).to.equal(card1);
-  })
+  });
+  it('Should have a turn count that starts at 0' , function() {
+    expect(round.turns).to.equal(0)
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    expect(round.turns).to.equal(2)
+  });
+  it('Should keep track of incorrect guesses', function() {
+    expect(round.incorrectGuesses).to.equal([]);
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    expect(round.incorrectGuesses).to.equal([14]);
+  });
+  it('Should switch the current card to the next card in the deck', function() {
+    expect(round.returnCurrentCard()).to.equal(card3);
+  });
+
 })
