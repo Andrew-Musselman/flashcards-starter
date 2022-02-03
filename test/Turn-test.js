@@ -9,7 +9,7 @@ describe('Turn', function() {
   let turn;
   beforeEach(() => {
     card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-    turn = new Turn('guess', card);
+    turn = new Turn('sea otter', card);
   });
 
   it.skip('Should be a function', function() {
@@ -34,15 +34,19 @@ describe('Turn', function() {
     expect(turn.returnCard()).to.equal(card);
   });
   it.skip('Should evaluate true if the guess matches the correct answer on the card', function() {
+    let rightTurn = new Turn('sea otter', card)
     expect(turn.evaluateGuess()).to.be.true;
   });
   it.skip('Should evaluate false if the guess does not match the correct answer on the card', function() {
+    let wrongTurn = new Turn('pug', card)
     expect(turn.evaluateGuess()).to.be.false;
   });
   it.skip('Should return correct if the guess is correct', function() {
+    let rightTurn = new Turn('sea otter', card)
     expect(turn.giveFeedback()).to.equal('correct!');
   });
   it.skip('Should return incorrect if the guess is incorrect', function() {
+    let wrongTurn = new Turn('pug', card)
     expect(turn.giveFeedback()).to.equal('incorrect!')
   })
 });
