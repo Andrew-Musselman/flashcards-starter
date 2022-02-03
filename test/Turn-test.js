@@ -39,4 +39,10 @@ describe('Turn', function() {
   it.skip('Should evaluate false if the guess does not match the correct answer on the card', function() {
     expect(turn.evaluateGuess()).to.be.false;
   });
+  it.skip('Should return correct if the guess is correct', function() {
+    expect(turn.giveFeedback()).to.equal('correct!');
+  });
+  it.skip('Should return incorrect if the guess is incorrect', function() {
+    expect(turn.giveFeedback()).to.equal('incorrect!')
+  })
 });
