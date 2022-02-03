@@ -15,15 +15,16 @@ describe('Turn', function() {
   it('Should be a function', function() {
     expect(Turn).to.be.a('function');
   });
-  it.skip('Should be an instance of Turn', function() {
+  it('Should be an instance of Turn', function() {
     expect(turn).to.be.instanceof(Turn);
   });
-  it.skip('Should take a string as its first argument', function() {
-
-    expect(turn.arguments[0]).to.be.a('string');
+  it('Should take a string as its first argument', function() {
+    expect(turn.guess).to.be.a('string');
+    expect(turn.guess).to.equal('sea otter');
   });
-  it.skip('Should take a card object as its second argument', function() {
-    expect(turn.arguments[1]).to.be.an('object');
+  it('Should take a card object as its second argument', function() {
+    expect(turn.card).to.be.an('object');
+    expect(turn.card).to.equal(card);
   });
   it.skip('Should return the user\'s guess', function() {
     expect(turn.returnGuess()).to.equal('sea otter');
