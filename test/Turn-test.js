@@ -33,5 +33,10 @@ describe('Turn', function() {
   it.skip('Should return the card', function() {
     expect(turn.returnCard()).to.equal(card);
   });
-
+  it.skip('Should evaluate true if the guess matches the correct answer on the card', function() {
+    expect(turn.evaluateGuess()).to.be.true;
+  });
+  it.skip('Should evaluate false if the guess does not match the correct answer on the card', function() {
+    expect(turn.evaluateGuess()).to.be.false;
+  });
 });
