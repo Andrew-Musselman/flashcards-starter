@@ -12,39 +12,46 @@ describe('Turn', function() {
     turn = new Turn('sea otter', card);
   });
 
-  it.skip('Should be a function', function() {
+  it('Should be a function', function() {
     expect(Turn).to.be.a('function');
   });
-  it.skip('Should be an instance of Turn', function() {
+  it('Should be an instance of Turn', function() {
     expect(turn).to.be.instanceof(Turn);
   });
-  it.skip('Should take a string as its first argument', function() {
-
-    expect(turn.arguments[0]).to.be.a('string');
+  it('Should take a string as its first argument', function() {
+    expect(turn.guess).to.be.a('string');
+    expect(turn.guess).to.equal('sea otter');
   });
-  it.skip('Should take a card object as its second argument', function() {
-    expect(turn.arguments[1]).to.be.an('object');
+  it('Should take a card object as its second argument', function() {
+    expect(turn.card).to.be.an('object');
+    expect(turn.card).to.equal(card);
   });
-  it.skip('Should return the user\'s guess', function() {
+  it('Should return the user\'s guess', function() {
+    turn.returnGuess();
     expect(turn.returnGuess()).to.equal('sea otter');
   });
-  it.skip('Should return the card', function() {
+  it('Should return the card', function() {
+    turn.returnCard();
     expect(turn.returnCard()).to.equal(card);
   });
-  it.skip('Should evaluate true if the guess matches the correct answer on the card', function() {
+  it('Should evaluate true if the guess matches the correct answer on the card', function() {
     let rightTurn = new Turn('sea otter', card)
-    expect(turn.evaluateGuess()).to.be.true;
+    rightTurn.evaluateGuess();
+    expect(rightTurn.evaluateGuess()).to.be.true;
   });
-  it.skip('Should evaluate false if the guess does not match the correct answer on the card', function() {
+  it('Should evaluate false if the guess does not match the correct answer on the card', function() {
     let wrongTurn = new Turn('pug', card)
-    expect(turn.evaluateGuess()).to.be.false;
+    wrongTurn.evaluateGuess();
+    expect(wrongTurn.evaluateGuess()).to.be.false;
   });
-  it.skip('Should return correct if the guess is correct', function() {
+  it('Should return correct if the guess is correct', function() {
     let rightTurn = new Turn('sea otter', card)
-    expect(turn.giveFeedback()).to.equal('correct!');
+    rightTurn.giveFeedback();
+    expect(rightTurn.giveFeedback()).to.equal('correct!');
   });
-  it.skip('Should return incorrect if the guess is incorrect', function() {
+  it('Should return incorrect if the guess is incorrect', function() {
     let wrongTurn = new Turn('pug', card)
-    expect(turn.giveFeedback()).to.equal('incorrect!')
+    wrongTurn.giveFeedback();
+    expect(wrongTurn.giveFeedback()).to.equal('incorrect!')
   })
 });
