@@ -17,6 +17,14 @@ class Turn {
       return false
     }
   }
+  giveFeedback() {
+    if(this.evaluateGuess()) {
+      return 'correct!'
+    }
+    if(!this.evaluateGuess()) {
+      return 'incorrect!'
+    }
+  }
 }
 
 module.exports = Turn;

@@ -44,14 +44,14 @@ describe('Turn', function() {
     wrongTurn.evaluateGuess();
     expect(wrongTurn.evaluateGuess()).to.be.false;
   });
-  it.skip('Should return correct if the guess is correct', function() {
+  it('Should return correct if the guess is correct', function() {
     let rightTurn = new Turn('sea otter', card)
     rightTurn.giveFeedback();
-    expect(turn.giveFeedback()).to.equal('correct!');
+    expect(rightTurn.giveFeedback()).to.equal('correct!');
   });
-  it.skip('Should return incorrect if the guess is incorrect', function() {
+  it('Should return incorrect if the guess is incorrect', function() {
     let wrongTurn = new Turn('pug', card)
     wrongTurn.giveFeedback();
-    expect(turn.giveFeedback()).to.equal('incorrect!')
+    expect(wrongTurn.giveFeedback()).to.equal('incorrect!')
   })
 });
