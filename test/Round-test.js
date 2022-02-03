@@ -49,5 +49,9 @@ describe('Round', function() {
   it('Should evaluate when a guess is incorrect', function() {
     expect(round.takeTurn('spleen')).to.equal('incorrect!');
   });
-
+  it('Should calculate the percent of guesses that are correct', function() {
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    expect(round.calculatePercentCorrect()).to.equal(50);
+  });
 })
