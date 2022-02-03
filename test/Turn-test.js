@@ -13,11 +13,9 @@ describe('Turn', function() {
   });
 
   it.skip('Should be a function', function() {
-    // const turn = new Turn();
     expect(Turn).to.be.a('function');
   });
   it.skip('Should be an instance of Turn', function() {
-    // const turn = new Turn();
     expect(turn).to.be.instanceof(Turn);
   });
   it.skip('Should take a string as its first argument', function() {
