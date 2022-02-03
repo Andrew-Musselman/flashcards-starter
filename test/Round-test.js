@@ -43,5 +43,11 @@ describe('Round', function() {
   it('Should switch the current card to the next card in the deck', function() {
     expect(round.returnCurrentCard()).to.equal(card3);
   });
+  it('Should evaluate when a guess is correct', function() {
+    expect(round.takeTurn('sea otter')).to.equal('correct!');
+  });
+  it('Should evaluate when a guess is incorrect', function() {
+    expect(round.takeTurn('spleen')).to.equal('incorrect!');
+  });
 
 })
