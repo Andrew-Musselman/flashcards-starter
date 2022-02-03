@@ -34,15 +34,15 @@ describe('Turn', function() {
     turn.returnCard();
     expect(turn.returnCard()).to.equal(card);
   });
-  it.skip('Should evaluate true if the guess matches the correct answer on the card', function() {
+  it('Should evaluate true if the guess matches the correct answer on the card', function() {
     let rightTurn = new Turn('sea otter', card)
     rightTurn.evaluateGuess();
-    expect(turn.evaluateGuess()).to.be.true;
+    expect(rightTurn.evaluateGuess()).to.be.true;
   });
-  it.skip('Should evaluate false if the guess does not match the correct answer on the card', function() {
+  it('Should evaluate false if the guess does not match the correct answer on the card', function() {
     let wrongTurn = new Turn('pug', card)
     wrongTurn.evaluateGuess();
-    expect(turn.evaluateGuess()).to.be.false;
+    expect(wrongTurn.evaluateGuess()).to.be.false;
   });
   it.skip('Should return correct if the guess is correct', function() {
     let rightTurn = new Turn('sea otter', card)
