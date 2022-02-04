@@ -39,10 +39,10 @@ describe('Round', function() {
     expect(round.turns).to.equal(2)
   })
   it('Should keep track of incorrect guesses', function() {
-    expect(round.incorrectGuesses).to.equal([]);
+    expect(round.incorrectGuesses).to.eql([]);
     round.takeTurn('sea otter');
     round.takeTurn('spleen');
-    expect(round.incorrectGuesses).to.equal([14]);
+    expect(round.incorrectGuesses).to.eql([14]);
   });
   it('Should switch the current card to the next card in the deck', function() {
     expect(round.returnCurrentCard()).to.equal(card3);
