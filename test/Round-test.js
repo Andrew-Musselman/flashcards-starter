@@ -31,10 +31,13 @@ describe('Round', function() {
   });
   it('Should have a turn count that starts at 0' , function() {
     expect(round.turns).to.equal(0)
+  });
+  it('The turn count should increase with every turn', function() {
+    expect(round.takeTurn()).to.be.a('function');
     round.takeTurn('sea otter');
     round.takeTurn('spleen');
     expect(round.turns).to.equal(2)
-  });
+  })
   it('Should keep track of incorrect guesses', function() {
     expect(round.incorrectGuesses).to.equal([]);
     round.takeTurn('sea otter');
