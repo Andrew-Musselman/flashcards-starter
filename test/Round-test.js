@@ -24,24 +24,29 @@ describe('Round', function() {
     expect(Round).to.be.a('function');
   });
   it('Should have a deck', function() {
-    expect(round.deck).to.equal([card1, card2, card3]);
+    expect(round.deck).to.eql([card1, card2, card3]);
   });
   it('Should have a current card', function() {
     expect(round.returnCurrentCard()).to.equal(card1);
   });
   it('Should have a turn count that starts at 0' , function() {
     expect(round.turns).to.equal(0)
+  });
+  it('The turn count should increase with every turn', function() {
+    expect(round.takeTurn).to.be.a('function');
     round.takeTurn('sea otter');
     round.takeTurn('spleen');
     expect(round.turns).to.equal(2)
-  });
+  })
   it('Should keep track of incorrect guesses', function() {
-    expect(round.incorrectGuesses).to.equal([]);
+    expect(round.incorrectGuesses).to.eql([]);
     round.takeTurn('sea otter');
     round.takeTurn('spleen');
-    expect(round.incorrectGuesses).to.equal([14]);
+    expect(round.incorrectGuesses).to.eql([14]);
   });
   it('Should switch the current card to the next card in the deck', function() {
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
     expect(round.returnCurrentCard()).to.equal(card3);
   });
   it('Should evaluate when a guess is correct', function() {
@@ -56,7 +61,9 @@ describe('Round', function() {
     expect(round.calculatePercentCorrect()).to.equal(50);
   });
   it('Should have an end', function() {
-    expect(round.endRound()).to.be.a('function');
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    expect(round.endRound).to.be.a('function');
     expect(round.endRound()).to.equal('**Round over!** You answered 50% of the questions correctly!');
   });
 })
