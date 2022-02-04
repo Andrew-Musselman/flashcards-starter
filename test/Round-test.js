@@ -24,7 +24,7 @@ describe('Round', function() {
     expect(Round).to.be.a('function');
   });
   it('Should have a deck', function() {
-    expect(round.deck).to.equal([card1, card2, card3]);
+    expect(round.deck).to.eql([card1, card2, card3]);
   });
   it('Should have a current card', function() {
     expect(round.returnCurrentCard()).to.equal(card1);
