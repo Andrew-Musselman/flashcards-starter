@@ -33,7 +33,7 @@ describe('Round', function() {
     expect(round.turns).to.equal(0)
   });
   it('The turn count should increase with every turn', function() {
-    expect(round.takeTurn()).to.be.a('function');
+    expect(round.takeTurn).to.be.a('function');
     round.takeTurn('sea otter');
     round.takeTurn('spleen');
     expect(round.turns).to.equal(2)
